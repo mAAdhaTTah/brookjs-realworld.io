@@ -1,0 +1,36 @@
+---
+- name: Add PHP 7.1 PPA
+  apt_repository:
+    repo: "ppa:ondrej/php"
+    update_cache: yes
+
+- name: Install PHP 7.1
+  apt:
+    name: "{{ item }}"
+    state: present
+    force: yes
+  with_items: "{{ php_extensions }}"
+
+- name: Start php7.1-fpm service
+  service:
+    name: php7.1-fpm
+    state: started
+    enabled: true
+
+- name: PHP configuration file
+  template:
+    src: php.ini.j2
+    dest: /etc/php/7.1/fpm/php.ini
+  notify: reload php-fpm
+
+- name: Create WordPress php-fpm configuration file
+  template:
+    src: php-fpm.conf.j2
+    dest: /etc/php/7.1/fpm/pool.d/wordpress.conf
+  notify: reload php-fpm
+
+- name: Disable default PHP-FPM pool
+  command: mv /etc/php/7.1/fpm/pool.d/www.conf /etc/php/7.1/fpm/pool.d/www.disabled
+  args:
+    creates: /etc/php/7.1/fpm/pool.d/www.disabled
+  notify: reload php-fpm
