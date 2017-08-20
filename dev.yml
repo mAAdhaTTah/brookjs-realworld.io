@@ -1,0 +1,16 @@
+---
+- name: "realworldio.brookjs.com: A realworld.io server with brookjs & PHP."
+  hosts: web:&development
+  become: yes
+  remote_user: vagrant
+
+  vars:
+    env: development
+    web_user: vagrant
+    web_group: www-data
+    www_root: /www/srv/realworldio
+
+  roles:
+    - role: common
+    - role: php
+    - role: composer

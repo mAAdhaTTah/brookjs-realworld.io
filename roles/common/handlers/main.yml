@@ -1,0 +1,12 @@
+---
+- name: restart memcached
+  service:
+    name: memcached
+    state: restarted
+
+- name: reload php-fpm
+  service:
+    name: php7.1-fpm
+    state: reloaded
+
+- include: reload_nginx.yml

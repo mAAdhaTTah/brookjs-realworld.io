@@ -16,9 +16,11 @@
 .DS_Store
 Thumbs.db
 
-/vendor
+vendor
 /.idea
 Homestead.json
 Homestead.yaml
 .env
 /public/assets
+/.vagrant
+/dev.retry

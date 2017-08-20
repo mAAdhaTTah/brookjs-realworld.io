@@ -1,0 +1,13 @@
+ntp_timezone: Etc/UTC
+
+apt_packages:
+  - python-software-properties
+  - python-pycurl
+  - build-essential
+  - python-mysqldb
+  - curl
+  - git-core
+  - dbus
+  - libnss-myhostname
+
+apt_cache_valid_time: 3600
