@@ -1,0 +1,31 @@
+{
+  "name": "brookjs-realworld.io",
+  "version": "0.0.0",
+  "description": "realworld.io built with brookjs & PHP server-side rendering.",
+  "main": "client/app.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.5.0",
+    "eslint-config-valtech": "^1.1.0",
+    "eslint-loader": "^1.9.0",
+    "handlebars": "^4.0.10",
+    "handlebars-loader": "^1.5.0",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "brookjs": "^0.8.6",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2"
+  }
+}
