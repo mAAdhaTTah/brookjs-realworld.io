@@ -8,9 +8,11 @@
     env: development
     web_user: vagrant
     web_group: www-data
-    www_root: /www/srv/realworldio
+    www_root: /srv/www/realworldio
+    server_url: realworldio.brookjs.dev
 
   roles:
     - role: common
     - role: php
     - role: composer
+    - role: nginx
